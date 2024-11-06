@@ -1,0 +1,85 @@
+### Giới Thiệu về GitHub Pages
+
+Trong phần này, chúng ta sẽ khám phá cách sử dụng **GitHub Pages** để lưu trữ các trang web tĩnh từ các kho chứa (repositories) của bạn trên GitHub. Đây là một tính năng tiện lợi và hoàn toàn miễn phí giúp bạn dễ dàng chia sẻ thông tin, tạo hồ sơ cá nhân hoặc tài liệu cho dự án của mình.
+
+#### 1. Tạo Kho Chứa Mới
+
+Đầu tiên, bạn cần tạo một kho chứa mới trên GitHub hoặc chọn một kho chứa hiện có mà bạn muốn tạo GitHub Pages cho nó. Ví dụ, bạn có thể tạo một kho chứa có tên là **chickens** và để nó công khai (public).
+
+#### 2. Thiết Lập Dự Án Cơ Bản
+
+Sau khi tạo kho chứa, bạn có thể tạo một tệp văn bản (ví dụ: `chickens.txt`) để chứa danh sách các giống gà. Bạn sẽ thực hiện các bước sau:
+
+- Khởi tạo kho chứa bằng lệnh `git init`.
+- Thêm một tệp vào kho chứa và thực hiện commit đầu tiên với nội dung cơ bản.
+
+```bash
+git init
+echo "Australorps" >> chickens.txt
+echo "Barnvelders" >> chickens.txt
+git add chickens.txt
+git commit -m "Initial commit"
+```
+
+#### 3. Tạo Nhánh Mới Cho GitHub Pages
+
+Để sử dụng GitHub Pages, bạn cần tạo một nhánh (branch) mới chứa tệp **index.html**. Bạn có thể thực hiện điều này với lệnh sau:
+
+```bash
+git checkout -b gh-pages
+```
+
+Sau đó, tạo tệp **index.html** với một số nội dung cơ bản:
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chickens</title>
+</head>
+<body>
+    <h1>Chickens!</h1>
+    <p>This is a simple website about chickens.</p>
+</body>
+</html>
+```
+
+### 4. Đẩy Nhánh Lên GitHub
+
+Sau khi đã tạo nội dung cho trang web, bạn cần đẩy nhánh gh-pages lên GitHub:
+
+```bash
+git add index.html
+git commit -m "Add index.html for GitHub Pages"
+git push origin gh-pages
+```
+
+### 5. Kích Hoạt GitHub Pages
+
+Để kích hoạt GitHub Pages, bạn vào phần **Settings** của kho chứa, cuộn xuống phần GitHub Pages và chọn nhánh mà bạn muốn sử dụng để lưu trữ trang web (trong trường hợp này là nhánh `gh-pages`). Chọn thư mục chứa tệp **index.html** (thông thường là root).
+
+- Nhấp vào **Save** để hoàn tất việc thiết lập.
+
+### 6. Kiểm Tra Trang Web
+
+Sau khi kích hoạt GitHub Pages, bạn có thể truy cập trang web của mình theo đường dẫn:
+
+```
+https://<username>.github.io/chickens
+```
+
+### 7. Cập Nhật Nội Dung Trang Web
+
+Khi bạn muốn cập nhật nội dung của trang web, chỉ cần chỉnh sửa tệp **index.html** hoặc thêm các tệp mới, sau đó thực hiện commit và đẩy lên nhánh `gh-pages`:
+
+```bash
+git add index.html
+git commit -m "Update content on index.html"
+git push origin gh-pages
+```
+
+### Kết Luận
+
+GitHub Pages là một công cụ mạnh mẽ và miễn phí cho việc lưu trữ các trang web tĩnh. Dù có một số hạn chế (chỉ hỗ trợ các trang tĩnh mà không có mã phía máy chủ), nhưng nó vẫn là một lựa chọn tuyệt vời cho các dự án cá nhân, hồ sơ trực tuyến, hoặc tài liệu cho dự án. Hãy tận dụng nó để chia sẻ công việc của bạn với mọi người!
